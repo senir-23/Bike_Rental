@@ -36,11 +36,9 @@ def page_eda():
     col2.metric("Rows", "17379")
     col3.metric("Null Values", "0")
     st.subheader("First 5 rows of the dataset:")
-    st.caption("Note: please refer to the Tech Annex for an explanation of the variables.")
     df = pd.read_csv('day.csv')
     st.dataframe(df.head(), use_container_width=True)
     st.subheader("Analysis of the Bike Sharing Service")
-    st.caption("Note: please refer to the Insights & Conclusion for further observations and perceptions.")
     st.markdown("Overview:")
     tab1 = st.tabs(["📕 Distribution by User"])
     # 1. Distribution of Rental Counts by type of user
