@@ -178,16 +178,11 @@ def page_model():
         holiday = st.selectbox('Holiday', options=[0, 1], format_func=lambda x: boolean_values[x])
         st.markdown('Weather-wise:') 
     with col2:
-        day = st.selectbox('Day', options=range(1, 31))
-        weekday = st.selectbox('Weekday', options=[0, 1, 2, 3, 4, 5, 6], format_func=lambda x: weekday_values[x])
-        st.header('  ') 
+         weather = st.selectbox('Weather', options=[1, 2, 3, 4], format_func=lambda x: weather_values[x-1])
            
         
     with col1:
-        weather = st.selectbox('Weather', options=[1, 2, 3, 4], format_func=lambda x: weather_values[x-1])
-        conv_factor2 = 100.0
-        humidity = st.slider('Humidity (%)', min_value=0, max_value=int(conv_factor2), step=1, value=int(0.5*conv_factor2), format='%d %%')
-        humidity_normalized = humidity / conv_factor2
+        
 
     with col2:
         conv_factor = 41.0
@@ -196,7 +191,9 @@ def page_model():
         conv_factor1 = 67.0
         windspeed = st.slider('Wind Speed (km/h)', min_value=0, max_value=int(conv_factor1), step=1, value=int(0.5*conv_factor1), format='%d km/h')
         windspeed_normalized = windspeed / conv_factor1
-
+        conv_factor2 = 100.0
+        humidity = st.slider('Humidity (%)', min_value=0, max_value=int(conv_factor2), step=1, value=int(0.5*conv_factor2), format='%d %%')
+        humidity_normalized = humidity / conv_factor2
         
         
                 
