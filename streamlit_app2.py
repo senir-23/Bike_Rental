@@ -56,9 +56,9 @@ def page_eda():
     fig1.update_layout(title="Distribution of rental counts by type of user", yaxis_title="User type", xaxis_title="Count")
     tab1[0].plotly_chart(fig1, use_container_width=True)
     
-    st.markdown("By Time & Season:")
+    st.markdown("By Season:")
     df = pd.read_csv('day.csv')
-    tab2, tab3, tab4, tab5, tab6, tab10 = st.tabs(["📗 by Season", "📘 by Month", "📙 by Day", "📓 by Weekday/Weekend", "🎉 by Holiday"])
+    tab2, tab3, tab4, tab5, tab6 = st.tabs(["📗 by Season", "📘 by Month", "📙 by Day", "📓 by Weekday/Weekend", "🎉 by Holiday"])
     # 2. Rental Counts by Season
     grouped_season = df.groupby("season").sum()["cnt"]
     fig2 = px.bar(grouped_season, title="Rental Counts by Season")
@@ -151,7 +151,7 @@ def comf_temp (temp_normalized):
 
 #the third page is about the model
 def page_model():
-    model = pickle.load(open("model3.pkl", "rb"))
+    model = pickle.load(open("pipe3.pkl", "rb"))
     df = pd.read_csv("preprocessed-df.csv")
     
     weather_values = ['Clear, Few clouds, Partly cloudy, Partly cloudy',
