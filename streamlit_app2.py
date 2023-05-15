@@ -171,11 +171,13 @@ def page_model():
         weekday = st.selectbox('Weekday', options=[0, 1, 2, 3, 4, 5, 6], format_func=lambda x: weekday_values[x])
         st.header('  ') 
         holiday = st.selectbox('Holiday', options=[0, 1], format_func=lambda x: boolean_values[x])
-        st.markdown('Weather-wise:') 
-        weather = st.selectbox('Weather', options=[1, 2, 3, 4], format_func=lambda x: weather_values[x-1])
+       
+        
          
         
     with col2:
+        st.markdown('Weather-wise:') 
+        weather = st.selectbox('Weather', options=[1, 2, 3, 4], format_func=lambda x: weather_values[x-1])
         conv_factor = 41.0
         temp = st.slider('Temperature (°C)', min_value=0, max_value=int(conv_factor), step=1, value=int(0.5*conv_factor), format='%d °C')
         temp_normalized = temp / conv_factor
