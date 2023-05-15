@@ -93,7 +93,11 @@ def page_eda():
     fig6.update_layout(xaxis_title="Holiday?", yaxis_title="Rental counts",
                       xaxis=dict(tickmode='array', tickvals=[0, 1],
                                  ticktext=['Non-holiday', 'Holiday']))
-    
+    tab2.plotly_chart(fig2, use_container_width=True)
+    tab3.plotly_chart(fig3, use_container_width=True)
+    tab4.plotly_chart(fig4, use_container_width=True)
+    tab5.plotly_chart(fig5, use_container_width=True)
+    tab6.plotly_chart(fig6, use_container_width=True)
     st.markdown("By Weather Condition:")
     df = pd.read_csv('day.csv')
     
