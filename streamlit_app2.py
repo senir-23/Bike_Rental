@@ -176,6 +176,8 @@ def page_model():
     with col1:
         year = st.selectbox('Year', options=[0, 1], format_func=lambda x: year_values[x])
         month = st.selectbox('Month', options=range(1, 13), format_func=lambda x: month_values[x-1])
+        weekday = st.selectbox('Weekday', options=[0, 1, 2, 3, 4, 5, 6], format_func=lambda x: weekday_values[x])
+        st.header('  ') 
         holiday = st.selectbox('Holiday', options=[0, 1], format_func=lambda x: boolean_values[x])
         st.markdown('Weather-wise:') 
         weather = st.selectbox('Weather', options=[1, 2, 3, 4], format_func=lambda x: weather_values[x-1])
