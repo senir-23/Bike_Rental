@@ -6,14 +6,8 @@
 
 import streamlit as st
 import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-import plotly.express as px
-import plotly.graph_objects as go
 import pandas as pd
 import pickle
-from PIL import Image
-import time
 
 model = pickle.load(open("pipe3.pkl", "rb"))
 df = pd.read_csv("traineddata.csv")
@@ -39,7 +33,6 @@ with col1:
         st.markdown('Weather-wise:') 
 with col2:
         day = st.selectbox('Day', options=range(1, 31))
-        hour = st.selectbox('Hour', options=range(0, 24))
         weekday = st.selectbox('Weekday', options=[0, 1, 2, 3, 4, 5, 6], format_func=lambda x: weekday_values[x])
         st.header('  ') 
            
