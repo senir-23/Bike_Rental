@@ -24,10 +24,10 @@ weather_values = ['Clear, Few clouds, Partly cloudy, Partly cloudy',
                       "Heavy Rain + Ice Pallets + Thunderstorm + Mist, Snow + Fog"]
 weekday_values = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 boolean_values = ["No", "Yes"]
-year_values = ["2011", "2012"]
+year_values = ["2018", "2019"]
 month_values = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     
-st.title(":green[Bike Sharing Analysis & Prediction] _GroupB_  :bicyclist: :woman-biking:")
+st.title("Bike Sharing Analysis & Prediction")
 st.subheader("Enter the following information to predict the number of bike rentals:")
 st.markdown('Time-wise:') 
 col1, col2 = st.columns(2)
@@ -65,7 +65,6 @@ input_data = {
         'season': get_season(month),
         'yr': year,
         'mnth': month,
-        'hr': hour,
         'holiday': holiday,
         'weekday': weekday,
         'workingday': 1 - holiday,
