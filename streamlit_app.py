@@ -22,8 +22,7 @@ year_values = ["2018", "2019"]
 month_values = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     
 st.title("Bike Sharing Analysis & Prediction")
-st.subheader("Enter the following information to predict the number of bike rentals:")
-st.markdown('Time-wise:') 
+st.subheader("Enter the following information to predict the number of bike rentals:") 
 col1, col2 = st.columns(2)
 
 with col1:
@@ -32,7 +31,6 @@ with col1:
         holiday = st.selectbox('Holiday', options=[0, 1], format_func=lambda x: boolean_values[x])
         st.markdown('Weather-wise:') 
 with col2:
-        day = st.selectbox('Day', options=range(1, 31))
         weekday = st.selectbox('Weekday', options=[0, 1, 2, 3, 4, 5, 6], format_func=lambda x: weekday_values[x])
         st.header('  ') 
            
@@ -55,7 +53,7 @@ with col2:
         
                 
 input_data = {
-        'season': get_season(month),
+        'season': get_season(spring),get_season(fall)
         'yr': year,
         'mnth': month,
         'holiday': holiday,
