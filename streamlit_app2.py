@@ -23,6 +23,8 @@ def page_navigation():
     }
     st.sidebar.title("Bike Sharing Analysis & Prediction")
     selection = st.sidebar.radio("Go to", list(pages.keys())
+    page = pages[selection]
+    page()
 
 # the first page is summary
 def page_summary():
