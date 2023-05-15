@@ -59,9 +59,6 @@ with col2:
         
 with col1:
         weather = st.selectbox('Weather', options=[1, 2, 3, 4], format_func=lambda x: weather_values[x-1])
-        conv_factor2 = 100.0
-        humidity = st.slider('Humidity (%)', min_value=0, max_value=int(conv_factor2), step=1, value=int(0.5*conv_factor2), format='%d %%')
-        humidity_normalized = humidity / conv_factor2
 
 with col2:
         conv_factor = 41.0
@@ -70,6 +67,9 @@ with col2:
         conv_factor1 = 67.0
         windspeed = st.slider('Wind Speed (km/h)', min_value=0, max_value=int(conv_factor1), step=1, value=int(0.5*conv_factor1), format='%d km/h')
         windspeed_normalized = windspeed / conv_factor1
+        conv_factor2 = 100.0
+        humidity = st.slider('Humidity (%)', min_value=0, max_value=int(conv_factor2), step=1, value=int(0.5*conv_factor2), format='%d %%')
+        humidity_normalized = humidity / conv_factor2
 
         
         
@@ -85,7 +85,6 @@ input_data = {
         'atemp': temp_normalized,
         'hum': humidity_normalized,
         'windspeed': windspeed_normalized,
-        'day' : day,
         'comfortable_temp' : comf_temp(temp_normalized),
         'comfortable_humidity' : comf_hum(humidity_normalized)
 }
