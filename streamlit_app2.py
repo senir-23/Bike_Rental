@@ -24,7 +24,7 @@ def page_navigation():
 # the first page is summary
 def page_summary():
     st.title("Bike Sharing Analysis & Prediction")
-    st.image('https://bit.ly/3lhx9Lj')
+    st.image('https://wips.plug.it/cips/tecnologia/cms/2021/03/bike-sharing.jpg')
     
 #the second page is our plots
 def page_eda():
