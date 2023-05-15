@@ -171,10 +171,6 @@ def page_model():
         weekday = st.selectbox('Weekday', options=[0, 1, 2, 3, 4, 5, 6], format_func=lambda x: weekday_values[x])
         st.header('  ') 
         holiday = st.selectbox('Holiday', options=[0, 1], format_func=lambda x: boolean_values[x])
-       
-        
-         
-        
     with col2:
         st.markdown('Weather-wise:') 
         weather = st.selectbox('Weather', options=[1, 2, 3, 4], format_func=lambda x: weather_values[x-1])
