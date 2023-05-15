@@ -33,7 +33,7 @@ def page_eda():
     st.subheader("Information of the dataset")
     col1, col2, col3 = st.columns(3)
     col1.metric("Columns", "16")
-    col2.metric("Rows", "17379")
+    col2.metric("Rows", "730")
     col3.metric("Null Values", "0")
     st.subheader("First 5 rows of the dataset:")
     df = pd.read_csv('day.csv')
