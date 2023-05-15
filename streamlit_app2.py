@@ -179,11 +179,7 @@ def page_model():
         st.markdown('Weather-wise:') 
     with col2:
          weather = st.selectbox('Weather', options=[1, 2, 3, 4], format_func=lambda x: weather_values[x-1])
-           
         
-    with col1:
-        
-
     with col2:
         conv_factor = 41.0
         temp = st.slider('Temperature (°C)', min_value=0, max_value=int(conv_factor), step=1, value=int(0.5*conv_factor), format='%d °C')
