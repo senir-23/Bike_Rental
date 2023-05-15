@@ -33,7 +33,7 @@ def page_summary():
     
 #the second page is our plots
 def page_eda():
-    st.title(":green[Bike Sharing Analysis & Prediction] _GroupB_  :bicyclist: :woman-biking:")
+    st.title("Bike Sharing Analysis & Prediction")
     st.header("Exploratory Data Analysis")
     st.subheader("Information of the dataset")
     col1, col2, col3 = st.columns(3)
