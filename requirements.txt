@@ -3,3 +3,6 @@ pandas
 pickle5
 scikit-learn
 xgboost
+seaborn
+plotly
+plotly_express
