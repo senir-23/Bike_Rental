@@ -9,6 +9,28 @@ import numpy as np
 import pandas as pd
 import pickle
 
+def get_season(month):
+    if month in [12, 1, 2]:
+        return 0
+    elif month in [3, 4, 5]:
+        return 1
+    elif month in [6, 7, 8]:
+        return 2
+    else:
+        return 3
+    
+def comf_hum (humidity_normalized):
+    if humidity_normalized >= 0.25 and humidity_normalized <= 0.55:
+        return 1
+    else:
+        return 0
+    
+def comf_temp (temp_normalized):
+    if temp_normalized >= 0.40 and temp_normalized <= 0.65:
+        return 1
+    else:
+        return 0
+
 model = pickle.load(open("pipe3.pkl", "rb"))
 df = pd.read_csv("traineddata.csv")
     
@@ -53,7 +75,7 @@ with col2:
         
                 
 input_data = {
-        'season': get_season(spring),get_season(fall)
+        'season': get_season(month),
         'yr': year,
         'mnth': month,
         'holiday': holiday,
