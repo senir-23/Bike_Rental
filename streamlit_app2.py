@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
@@ -221,9 +215,4 @@ def page_model():
     st.markdown(f"<p style='font-size:30px; color:green'>{rounded_prediction}</p>", unsafe_allow_html=True)
     bike_emoji = '<span style="font-size:30px"> 🚲 </span>'
     st.write(bike_emoji * rounded_prediction, unsafe_allow_html=True)
-
-    
-# Run the app
-if __name__ == "__main__":
-    page_navigation()
 
