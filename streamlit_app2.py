@@ -160,7 +160,7 @@ def page_model():
                       "Heavy Rain + Ice Pallets + Thunderstorm + Mist, Snow + Fog"]
     weekday_values = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
     boolean_values = ["No", "Yes"]
-    year_values = ["2011", "2012"]
+    year_values = ["2018", "2019"]
     month_values = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     
     st.title("Bike Sharing Analysis & Prediction")
