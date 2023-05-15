@@ -20,8 +20,6 @@ def page_navigation():
     pages = {
         "Exploratory Data Analysis": page_eda,
         "Prediction Result": page_model,
-        "Insights & Conclusion": page_conclusion,
-        "Tech Annex":page_annex
     }
     st.sidebar.title("Bike Sharing Analysis & Prediction")
     selection = st.sidebar.radio("Go to", list(pages.keys()))
