@@ -18,13 +18,14 @@ import time
 # create page navigation
 def page_navigation():
     pages = {
+        "Executive Summary": page_summary,
         "Exploratory Data Analysis": page_eda,
         "Prediction Result": page_model,
     }
     st.sidebar.title("Bike Sharing Analysis & Prediction")
-    selection = st.sidebar.radio("Go to", list(pages.keys())
+    selection = st.sidebar.radio("Go to", list(pages.keys()))
     page = pages[selection]
-    page()                                 
+    page()                  
 
 # the first page is summary
 def page_summary():
