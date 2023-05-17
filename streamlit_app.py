@@ -132,13 +132,13 @@ def get_season(month):
         return 2
     else:
         return 3
-def comf_hum(humidity_normalized):
+def comf_hum(humidity):
     if humidity_normalized >= 0.25 and humidity_normalized <= 0.55:
         return 1
     else:
         return 0
     
-def comf_temp(temp_normalized):
+def comf_temp(temp):
     if temp_normalized >= 0.40 and temp_normalized <= 0.65:
         return 1
     else:
@@ -198,8 +198,8 @@ def page_model():
         'atemp': temp,
         'hum': humidity,
         'windspeed':windspeed,
-        'comfortable_temp' : comf_temp(temp_normalized),
-        'comfortable_humidity' : comf_hum(humidity_normalized)
+        'comfortable_temp' : comf_temp(temp),
+        'comfortable_humidity' : comf_hum(humidity)
     }
 
     input_df = pd.DataFrame([input_data])
