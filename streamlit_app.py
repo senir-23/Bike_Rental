@@ -197,9 +197,7 @@ def page_model():
         'weathersit': weather,
         'atemp': temp,
         'hum': humidity,
-        'windspeed':windspeed,
-        'comfortable_temp' : comf_temp(temp),
-        'comfortable_humidity' : comf_hum(humidity)
+        'windspeed':windspeed
     }
 
     input_df = pd.DataFrame([input_data])
