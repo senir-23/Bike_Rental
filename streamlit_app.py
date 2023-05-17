@@ -133,17 +133,7 @@ def get_season(month):
     else:
         return 3
     
-def comf_hum (humidity_normalized):
-    if humidity_normalized >= 0.25 and humidity_normalized <= 0.55:
-        return 1
-    else:
-        return 0
-    
-def comf_temp (temp_normalized):
-    if temp_normalized >= 0.40 and temp_normalized <= 0.65:
-        return 1
-    else:
-        return 0
+
     
 
     
@@ -186,6 +176,17 @@ def page_model():
         humidity = st.slider('Humidity (%)', min_value=0, max_value=int(conv_factor2), step=1, value=int(0.5*conv_factor2), format='%d %%')
         humidity_normalized = humidity / conv_factor2
         
+def comf_hum (humidity_normalized):
+    if humidity_normalized >= 0.25 and humidity_normalized <= 0.55:
+        return 1
+    else:
+        return 0
+    
+def comf_temp (temp_normalized):
+    if temp_normalized >= 0.40 and temp_normalized <= 0.65:
+        return 1
+    else:
+        return 0
         
                 
     input_data = {
