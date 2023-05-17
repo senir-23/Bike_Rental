@@ -12,7 +12,7 @@ import time
 # create page navigation
 def page_navigation():
     pages = {
-        "Executive Summary": page_summary,
+        "Introduction": page_summary,
         "Exploratory Data Analysis": page_eda,
         "Prediction Result": page_model,
     }
