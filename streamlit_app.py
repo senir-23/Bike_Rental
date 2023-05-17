@@ -178,10 +178,10 @@ def page_model():
         temp = st.slider('Temperature (°C)', min_value=0, max_value=int(conv_factor), step=1, value=int(0.5*conv_factor), format='%d °C')
         temp_normalized = temp / conv_factor
         conv_factor1 = 67.0
-        windspeed = st.slider('Wind Speed (km/h)', min_value=0, max_value=int(conv_factor1), step=1, value=int(0.5*conv_factor1), format='%d km/h')
+        windspeed = st.slider('Wind Speed (km/h)', min_value=0, max_value=int(conv_factor1), step=2, value=int(0.5*conv_factor1), format='%d km/h')
         windspeed_normalized = windspeed / conv_factor1
         conv_factor2 = 100.0
-        humidity = st.slider('Humidity (%)', min_value=0, max_value=int(conv_factor2), step=1, value=int(0.5*conv_factor2), format='%d %%')
+        humidity = st.slider('Humidity (%)', min_value=0, max_value=int(conv_factor2), step=3, value=int(0.5*conv_factor2), format='%d %%')
         humidity_normalized = humidity / conv_factor2
         
 
@@ -196,7 +196,7 @@ def page_model():
         'workingday': 1 - holiday,
         'weathersit': weather,
         'atemp': temp_normalized,
-        'hum': hum,
+        'hum': hum_normalized,
         'windspeed':windspeed_normalized
     }
 
