@@ -196,7 +196,7 @@ def page_model():
     rounded_prediction = round(prediction[0])
     
     st.subheader('Predicted Number of Bike Rentals:')
-    st.markdown(f"<p style='font-size:30px; color:green'>{rounded_prediction}</p>", unsafe_allow_html=True)
+    st.markdown(f"<p style='font-size:30px; color:red'>{rounded_prediction}</p>", unsafe_allow_html=True)
     bike_emoji = '<span style="font-size:10px"> 🚲 </span>'
     st.write(bike_emoji * rounded_prediction, unsafe_allow_html=True)
 # Run the app
