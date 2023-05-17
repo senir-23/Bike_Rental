@@ -132,17 +132,6 @@ def get_season(month):
         return 2
     else:
         return 3
-def comf_hum(humidity):
-    if humidity >= 0.25 and humidity <= 0.55:
-        return 1
-    else:
-        return 0
-    
-def comf_temp(temp):
-    if temp >= 0.40 and temp <= 0.65:
-        return 1
-    else:
-        return 0
       
     
 
