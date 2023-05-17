@@ -195,8 +195,8 @@ def page_model():
         'weekday': weekday,
         'workingday': 1 - holiday,
         'weathersit': weather,
-        'atemp': get_temp(temp_normalized),
-        'hum': get_hum(humidity_normalized),
+        'atemp': temp(temp_normalized),
+        'hum': hum(humidity_normalized),
         'windspeed':windspeed_normalized
     }
 
