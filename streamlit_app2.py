@@ -203,7 +203,7 @@ def page_model():
 
     input_df = pd.DataFrame([input_data])
 
-    prediction = model.predict(input_df)
+    prediction = loaded_model.predict(input_df)
     
     rounded_prediction = round(prediction[0])
     
