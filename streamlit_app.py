@@ -132,13 +132,13 @@ def get_season(month):
         return 2
     else:
         return 3
-def hum(humidity_normalized):
+def comf_hum(humidity_normalized):
     if humidity_normalized >= 0.25 and humidity_normalized <= 0.55:
         return 1
     else:
         return 0
     
-def temp(temp_normalized):
+def comf_temp(temp_normalized):
     if temp_normalized >= 0.40 and temp_normalized <= 0.65:
         return 1
     else:
@@ -195,8 +195,8 @@ def page_model():
         'weekday': weekday,
         'workingday': 1 - holiday,
         'weathersit': weather,
-        'atemp': temp(temp_normalized),
-        'hum': hum(humidity_normalized),
+        'atemp': temp_normalized,
+        'hum': hum,
         'windspeed':windspeed_normalized
     }
 
