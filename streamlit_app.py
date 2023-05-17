@@ -196,7 +196,7 @@ def page_model():
         'workingday': 1 - holiday,
         'weathersit': weather,
         'atemp': temp_normalized,
-        'hum': hum_normalized,
+        'hum': humidity_normalized,
         'windspeed':windspeed_normalized
     }
 
