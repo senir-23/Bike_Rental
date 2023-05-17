@@ -176,13 +176,13 @@ def page_model():
         weather = st.selectbox('Weather', options=[1, 2, 3, 4], format_func=lambda x: weather_values[x-1])
         conv_factor = 41.0
         temp = st.slider('Temperature (°C)', min_value=0, max_value=int(conv_factor), step=1, value=int(0.5*conv_factor), format='%d °C')
-        temp_normalized = temp / conv_factor
+        temp = temp / conv_factor
         conv_factor1 = 67.0
         windspeed = st.slider('Wind Speed (km/h)', min_value=0, max_value=int(conv_factor1), step=2, value=int(0.5*conv_factor1), format='%d km/h')
-        windspeed_normalized = windspeed / conv_factor1
+        windspeed = windspeed / conv_factor1
         conv_factor2 = 100.0
         humidity = st.slider('Humidity (%)', min_value=0, max_value=int(conv_factor2), step=3, value=int(0.5*conv_factor2), format='%d %%')
-        humidity_normalized = humidity / conv_factor2
+        humidity = humidity / conv_factor2
         
 
         
@@ -195,9 +195,9 @@ def page_model():
         'weekday': weekday,
         'workingday': 1 - holiday,
         'weathersit': weather,
-        'atemp': temp_normalized,
-        'hum': humidity_normalized,
-        'windspeed':windspeed_normalized,
+        'atemp': temp,
+        'hum': humidity,
+        'windspeed':windspeed,
         'comfortable_temp' : comf_temp(temp_normalized),
         'comfortable_humidity' : comf_hum(humidity_normalized)
     }
