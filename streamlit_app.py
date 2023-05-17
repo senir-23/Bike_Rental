@@ -132,9 +132,6 @@ def get_season(month):
         return 2
     else:
         return 3
-    
-
-    
 
     
 
@@ -166,6 +163,18 @@ def page_model():
     with col2:
         st.markdown('Weather-wise:') 
         weather = st.selectbox('Weather', options=[1, 2, 3, 4], format_func=lambda x: weather_values[x-1])
+        def comf_hum (humidity_normalized):
+    if humidity_normalized >= 0.25 and humidity_normalized <= 0.55:
+        return 1
+    else:
+        return 0
+    
+    def comf_temp (temp_normalized):
+    if temp_normalized >= 0.40 and temp_normalized <= 0.65:
+        return 1
+    else:
+        return 0
+    
         conv_factor = 41.0
         temp = st.slider('Temperature (°C)', min_value=0, max_value=int(conv_factor), step=1, value=int(0.5*conv_factor), format='%d °C')
         temp_normalized = temp / conv_factor
@@ -176,17 +185,7 @@ def page_model():
         humidity = st.slider('Humidity (%)', min_value=0, max_value=int(conv_factor2), step=1, value=int(0.5*conv_factor2), format='%d %%')
         humidity_normalized = humidity / conv_factor2
         
-def comf_hum (humidity_normalized):
-    if humidity_normalized >= 0.25 and humidity_normalized <= 0.55:
-        return 1
-    else:
-        return 0
-    
-def comf_temp (temp_normalized):
-    if temp_normalized >= 0.40 and temp_normalized <= 0.65:
-        return 1
-    else:
-        return 0
+
         
                 
     input_data = {
@@ -199,9 +198,7 @@ def comf_temp (temp_normalized):
         'weathersit': weather,
         'atemp': temp_normalized,
         'hum': humidity_normalized,
-        'windspeed': windspeed_normalized,
-        'comfortable_temp' : comf_temp(temp_normalized),
-        'comfortable_humidity' : comf_hum(humidity_normalized)
+        'windspeed': windspeed_normalized
     }
 
     input_df = pd.DataFrame([input_data])
