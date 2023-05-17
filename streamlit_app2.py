@@ -148,7 +148,7 @@ def comf_temp (temp_normalized):
 
 #the third page is about the model
 def page_model():
-    model = pickle.load(open("pipe3.pkl", "rb"))
+    loaded_model = pickle.load(open('trained_model.sav','rb'))
     df = pd.read_csv("preprocessed-df.csv")
     
     weather_values = ['Clear, Few clouds, Partly cloudy, Partly cloudy',
